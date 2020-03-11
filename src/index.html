@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>moveDoraemon</title>
 </head>
 <body>
-<style id="demo2"></style>
-<div id="demo"></div>
+<style id="showText"></style>
+<div id="doraemon"></div>
 <div id="buttons">
   <button id="btnPause">Pause</button>
   <button id="btnPlay">Play</button>
@@ -17,11 +18,13 @@
 </div>
 
 <style>
-  *{
+  * {
     box-sizing: border-box;
   }
-  *::before, *::after{box-sizing: border-box}
-  #buttons{
+  *::before, *::after {
+    box-sizing: border-box
+  }
+  #buttons {
     position: fixed;
     right: 0;
     top: 0;
@@ -31,23 +34,26 @@
     margin-top: 10px;
     margin-right: 10px;
   }
-  #buttons>button{
+  #buttons > button {
     margin-bottom: 10px;
     padding: 4px 8px;
+    background: #019fe9;
+    box-shadow: 0 0 2px #000;
   }
-  #demo2 {
+  #showText {
     display: none;
+    margin-left: 10px;
   }
-  #demo {
+  #doraemon {
     position: fixed;
     height: 50vh;
     top: 0;
-    left: 0;
+    left: 10px;
     width: 100%;
-    border: 1px solid red;
+    border-bottom: 2px solid #019fe9;
     overflow-y: auto;
   }
-  #demo::-webkit-scrollbar{
+  #doraemon::-webkit-scrollbar {
     display: none;
   }
   #html {
@@ -82,6 +88,5 @@
 </div>
 
 <script src="main.js"></script>
-
 </body>
 </html>

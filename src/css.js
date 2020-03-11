@@ -1,4 +1,11 @@
 const string = `
+/** 
+  * Hey, this is Ricky. A Web Developer.
+  * Next, I will show my CSS skills ===>>>
+  * A cute Doraemon.
+  * Wish you like it.
+  **/
+  
  .skin * {
   box-sizing: border-box;
   margin: 0;
@@ -224,6 +231,14 @@ body {
   top: 2px;
   left: 3px;
 }
+
+/** 
+  * Done! 
+  * How do you feel?
+  * Amazing? Funny? or any comment?
+  * Please just let me Know.
+  * Thank you.
+  **/
 `
 
 export default string

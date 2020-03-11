@@ -4,8 +4,8 @@ const player = {
   id: undefined,
   time: 50,
   ui: {
-    demo: document.querySelector('#demo'),
-    demo2: document.querySelector('#demo2')
+    doraemon: document.querySelector('#doraemon'),
+    showText: document.querySelector('#showText')
   },
   events: {
     '#btnPause': 'pause',
@@ -15,7 +15,7 @@ const player = {
   },
   n: 1,
   init: () => {
-    player.ui.demo.innerText = string.substr(0, player.n)
+    player.ui.doraemon.innerText = string.substr(0, player.n)
     player.ui.innerHTML = string.substr(0, player.n)
     player.play()
     player.bindEvents()
@@ -34,9 +34,9 @@ const player = {
       window.clearInterval(player.id)
       return
     }
-    player.ui.demo.innerText = string.substr(0, player.n)
-    player.ui.demo2.innerHTML = string.substr(0, player.n)
-    player.ui.demo.scrollTop = player.ui.demo.scrollHeight
+    player.ui.doraemon.innerText = string.substr(0, player.n)
+    player.ui.showText.innerHTML = string.substr(0, player.n)
+    player.ui.doraemon.scrollTop = player.ui.doraemon.scrollHeight
   },
   play: () => {
     player.id = setInterval(player.run, player.time)
@@ -46,7 +46,7 @@ const player = {
   },
   slow: () => {
     player.pause()
-    player.time = 200
+    player.time = 100
     player.play()
   },
   fast: () => {
