@@ -117,9 +117,82 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"main.js":[function(require,module,exports) {
+})({"css.js":[function(require,module,exports) {
+"use strict";
 
-},{}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var string = "\n .skin * {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n.skin *::before, *::after {\n  box-sizing: border-box;\n}\nbody {\n  background: #ffffff;\n  min-height: 100vh;\n  position: relative;\n}\n.skin {\n  border: 3px solid #000000;\n  width: 250px;\n  height: 250px;\n  top: 25px;\n  left: 50%;\n  margin-left: -125px;\n  background: #019fe9;\n  border-radius: 50%;\n  position: relative;\n}\n.eye {\n  border: 2px solid black;\n  width: 50px;\n  height: 64px;\n  position: absolute;\n  top: 3px;\n  left: 60%;\n  margin-left: -25px;\n  background: #ffffff;\n  border-radius: 38px/50px;\n  z-index: 1;\n}\n.eye::before {\n  content: '';\n  display: block;\n  width: 19px;\n  height: 25px;\n  position: absolute;\n  left: 2px;\n  bottom: 6px;\n  background: #000000;\n  border-radius: 38px/50px;\n}\n.eye::after {\n  content: '';\n  display: block;\n  width: 8px;\n  height: 8px;\n  position: absolute;\n  left: 4px;\n  bottom: 9px;\n  background: #ffffff;\n  border-radius: 50%;\n}\n.eye.left {\n  transform: translateX(-50px);\n}\n.face {\n  position: absolute;\n  border: 2px solid black;\n  width: 210px;\n  height: 210px;\n  border-radius: 50%;\n  background: #ffffff;\n  left: 50%;\n  margin-left: -105px;\n  bottom: 5px;\n}\n\n\n.nose {\n  border: 2px solid black;\n  position: absolute;\n  width: 25px;\n  height: 25px;\n  border-radius: 50%;\n  background: #ff0000;\n  left: 108px;\n  top: 55px;\n}\n.nose::before {\n  content: '';\n  display: block;\n  width: 7px;\n  height: 7px;\n  position: absolute;\n  left: 4px;\n  bottom: 12px;\n  background: #ffffff;\n  border-radius: 50%;\n}\n.mouth {\n  border-left: 2px solid black;\n  position: absolute;\n  height: 115px;\n  left: 120px;\n  bottom: 50px;\n}\n.mouth::after {\n  content: '';\n  display: block;\n  position: absolute;\n  border: 2px solid black;\n  width: 150px;\n  height: 50px;\n  border-radius: 0 0 50% 50%/0 0 100% 100%;\n  border-top-color: transparent;\n  bottom: 0;\n  left: -75px;\n}\n.mustache {\n  position: relative;\n}\n.mustacheLeft_1 {\n  border-top: 2px solid black;\n  position: absolute;\n  width: 65px;\n  left: 35px;\n  top: 100px;\n}\n.mustacheLeft_2 {\n  border-top: 2px solid black;\n  position: absolute;\n  width: 75px;\n  left: 25px;\n  top: 84px;\n  transform: rotate(15deg);\n}\n.mustacheLeft_3 {\n  border-top: 2px solid black;\n  position: absolute;\n  width: 75px;\n  left: 25px;\n  top: 123px;\n  transform: rotate(-15deg);\n}\n.mustacheRight_1 {\n  border-top: 2px solid black;\n  position: absolute;\n  width: 65px;\n  right: 35px;\n  top: 100px;\n}\n.mustacheRight_2 {\n  border-top: 2px solid black;\n  position: absolute;\n  width: 75px;\n  right: 25px;\n  top: 84px;\n  transform: rotate(-15deg);\n}\n.mustacheRight_3 {\n  border-top: 2px solid black;\n  position: absolute;\n  width: 75px;\n  Right: 25px;\n  top: 123px;\n  transform: rotate(15deg);\n}\n.neck {\n  border: 2px solid black;\n  width: 150px;\n  height: 15px;\n  position: absolute;\n  left: 50%;\n  bottom: 5px;\n  margin-left: -75px;\n  background: #ff0000;\n  border-radius: 20px;\n}\n.neck::before {\n  content: '';\n  display: block;\n  position: absolute;\n  width: 150px;\n  height: 15px;\n  bottom: -17px;\n  background: #ffffff;\n}\n.bell {\n  border: 2px solid black;\n  width: 25px;\n  height: 25px;\n  position: absolute;\n  bottom: 0;\n  left: 50%;\n  margin-left: -14px;\n  border-radius: 50%;\n  background: #ecc81a;\n}\n.bell::after {\n  content: '';\n  display: block;\n  border: 2px solid black;\n  width: 30px;\n  height: 5px;\n  position: absolute;\n  bottom: 11px;\n  left: 50%;\n  margin-left: -15px;\n  border-radius: 20px;\n  background: #ecc81a;\n}\n.bellHole {\n  width: 8px;\n  height: 8px;\n  position: absolute;\n  border-radius: 50%;\n  top: 54%;\n  left: 25%;\n  background-color: #000000;\n}\n.bellHole::after {\n  content: '';\n  display: block;\n  position: absolute;\n  border-left: 2px solid black;\n  height: 8px;\n  top: 2px;\n  left: 3px;\n}\n";
+var _default = string;
+exports.default = _default;
+},{}],"main.js":[function(require,module,exports) {
+"use strict";
+
+var _css = _interopRequireDefault(require("./css"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var player = {
+  id: undefined,
+  time: 50,
+  ui: {
+    demo: document.querySelector('#demo'),
+    demo2: document.querySelector('#demo2')
+  },
+  events: {
+    '#btnPause': 'pause',
+    '#btnPlay': 'play',
+    '#btnSlow': 'slow',
+    '#btnFast': 'fast'
+  },
+  n: 1,
+  init: function init() {
+    player.ui.demo.innerText = _css.default.substr(0, player.n);
+    player.ui.innerHTML = _css.default.substr(0, player.n);
+    player.play();
+    player.bindEvents();
+  },
+  bindEvents: function bindEvents() {
+    for (var key in player.events) {
+      if (player.events.hasOwnProperty(key)) {
+        var value = player.events[key];
+        document.querySelector(key).onclick = player[value];
+      }
+    }
+  },
+  run: function run() {
+    player.n += 1;
+
+    if (player.n > _css.default.length) {
+      window.clearInterval(player.id);
+      return;
+    }
+
+    player.ui.demo.innerText = _css.default.substr(0, player.n);
+    player.ui.demo2.innerHTML = _css.default.substr(0, player.n);
+    player.ui.demo.scrollTop = player.ui.demo.scrollHeight;
+  },
+  play: function play() {
+    player.id = setInterval(player.run, player.time);
+  },
+  pause: function pause() {
+    return window.clearInterval(player.id);
+  },
+  slow: function slow() {
+    player.pause();
+    player.time = 200;
+    player.play();
+  },
+  fast: function fast() {
+    player.pause();
+    player.time = 0;
+    player.play();
+  }
+};
+player.init();
+},{"./css":"css.js"}],"../../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -147,7 +220,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53424" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64205" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
