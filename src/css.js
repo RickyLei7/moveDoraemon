@@ -3,7 +3,7 @@ const string = `
   * Hey, this is Ricky,
   * A Web Developer.
   * Next, 
-  * I will show my CSS skills,
+  * I will show my CSS and code optimization skills,
   * A cute Doraemon.
   * Wish you like it.
   **/
