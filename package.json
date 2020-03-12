@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": "rm -rf dist && parcel build src/index.html --no-minify --public-url ./"
+  },
+
+  "name": "doraemon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:RickyLei7/doraemon.git",
+  "author": "RickyLei <rickylei7@gmail.com>",
+  "license": "MIT"
+}
